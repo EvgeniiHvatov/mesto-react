@@ -1,31 +1,27 @@
 import React from 'react';
 
-function Main() {
+function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
   return (
     <>
-    <main class="content">
-      <section class="profile">
-        <div class="profile__container">
-        <button class="profile__avatar-button" type="button"></button>
-        <img src="<%=require('./images/avatar.jpg')%>" alt="Ваше фото (аватарка)" class="profile__avatar"/>
+    <main className="content">
+      <section className="profile">
+        <div className="profile__container">
+        <button onClick={onEditAvatar} className="profile__avatar-button" type="button"></button>
+        <img src="<%=require('./images/avatar.jpg')%>" alt="Ваше фото (аватарка)" className="profile__avatar"/>
         </div>
-        <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <p class="profile__subtitle">Исследователь океана</p>
-          <button type="button" class="profile__edit-button"></button>
+        <div className="profile__info">
+          <h1 className="profile__title">Жак-Ив Кусто</h1>
+          <p className="profile__subtitle">Исследователь океана</p>
+          <button onClick={onEditProfile} type="button" className="profile__edit-button"></button>
         </div>
-        <button type="button" class="profile__add-button"></button>
+        <button onClick={onAddPlace} type="button" className="profile__add-button"></button>
       </section>
-      <section class="places">
-        <ul class="places__list"></ul>
+      <section className="places">
+        <ul className="places__list"></ul>
       </section>
     </main>
     </>
   );
-}
-
-handleEditAvatarClick = () => {
-  document.querySelector('.popup_opened').classList.add;
 }
 
 export default Main;

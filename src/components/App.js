@@ -1,8 +1,10 @@
 import logo from '../images/logo.svg';
 //import '../index.css';
-import Header from './Header.js'
+import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
+import PopupWithForm from './PopupWithForm';
+import React from 'react';
 
 function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false)
@@ -29,8 +31,60 @@ function App() {
   return (
   <div className="page">
     <Header/>
-    <Main/>
+    <Main
+     onEditProfile = {handleEditProfileClick}
+     onAddPlace = {handleAddPlaceClick}
+     onEditAvatar = {handleEditAvatarClick}
+     onCardClick = {handleCardClick}
+    />
     <Footer/>
+
+    <PopupWithForm 
+      isOpen = {isEditProfilePopupOpen}
+      name = 'edit-profile'
+      title = 'Редактировать профиль'
+      children = {
+        <>
+          <input class="popup__input popup__input_text_name" id="firstname" name="firstname" placeholder="Имя" type="text" required minlength="2" maxlength="40"/>
+          <span class="popup__error" id="firstname-error"></span>
+          <input class="popup__input popup__input_text_about" id="about" name="about" placeholder="О себе" type="text" required minlength="2" maxlength="200"/>
+          <span class="popup__error" id="about-error"></span>
+        </>
+      }
+    />
+
+    <PopupWithForm 
+      isOpen = {isEditAvatarPopupOpen}
+      name = 'edit-avatar'
+      title = 'Обновить аватар'
+      children = {
+        <>
+          <input class="popup__input" id="avatarlink" name="url" type="url" placeholder="Ссылка на аватар" required />
+          <span class="popup__error" id="avatarlink-error"></span>
+        </>
+      }
+    />
+
+    <PopupWithForm 
+      isOpen = {isAddPlacePopupOpen}
+      name = 'add-card'
+      title = 'Новое место'
+      children = {
+        <>
+          <input class="popup__input popup__input_text_name-place" id="nameplace" name="name" placeholder="Название" type="text" required minlength="2" maxlength="30"/>
+          <span class="popup__error" id="nameplace-error"></span>
+          <input class="popup__input popup__input_text_image-link" id="imagelink" name="link" placeholder="Ссылка на картинку" required type="url"/>
+          <span class="popup__error" id="imagelink-error"></span>
+        </>
+      }
+    />
+
+    <PopupWithForm 
+      name = 'confirmation'
+      title = 'Вы уверены?'
+    />
+
+
     <template id="card">
       <li class="places__item">
         <button type="button" class="places__delete-card"></button>

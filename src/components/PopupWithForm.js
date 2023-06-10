@@ -1,0 +1,16 @@
+function PopupWithForm({isOpen, onClose, name, title, children}) {
+  return (
+    <div className={`popup popup_${name} ${isOpen && `popup_opened`}`}>
+      <div className="popup__container">
+        <button onClick={onClose} type="button" className="popup__close"></button>
+        <h2 className="popup__heading">{title}</h2>
+        <form className="popup__form" name={`${name}`} novalidate>
+          {children}
+          <button className="popup__submit popup__submit_disabled" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default PopupWithForm;
