@@ -6,8 +6,8 @@ function Card({card, name, link, likes, onCardClick}) {
   return (
       <li className="places__item">
         <button type="button" className="places__delete-card"></button>
-        <div className="places__image-container">
-          <img onClick={handleClick} src={link} alt={name} className="places__image"/>
+        <div onClick={handleClick} className="places__image-container">
+          <img src={link} alt={name} className="places__image"/>
         </div>
         <div className="places__heading">
           <h2 className="places__text">{name}</h2>

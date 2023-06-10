@@ -25,8 +25,8 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
     <main className="content">
       <section className="profile">
         <div className="profile__container">
-        <button onClick={onEditAvatar} style={{ backgroundImage: `url(${userAvatar})` }} className="profile__avatar-button" type="button"></button>
-        <img style={{ backgroundImage: `url(${userAvatar})` }} alt="Ваше фото (аватарка)" className="profile__avatar"/>
+        <button onClick={onEditAvatar}  className="profile__avatar-button" type="button"></button>
+        <img src={userAvatar} alt="Ваше фото (аватарка)" className="profile__avatar"/>
         </div>
         <div className="profile__info">
           <h1 className="profile__title">{userName}</h1>
