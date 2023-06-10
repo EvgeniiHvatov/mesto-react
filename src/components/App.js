@@ -28,6 +28,13 @@ function App() {
     setSelectedCard(card);
   }
 
+  function closeAllPopups() {
+    setEditProfilePopupOpen(false);
+    setAddPlacePopupOpen(false);
+    setEditAvatarPopupOpen(false);
+    setSelectedCard(null);
+  }
+
   return (
   <div className="page">
     <Header/>
@@ -41,6 +48,7 @@ function App() {
 
     <PopupWithForm 
       isOpen = {isEditProfilePopupOpen}
+      onClose = {closeAllPopups}
       name = 'edit-profile'
       title = 'Редактировать профиль'
       children = {
@@ -55,6 +63,7 @@ function App() {
 
     <PopupWithForm 
       isOpen = {isEditAvatarPopupOpen}
+      onClose = {closeAllPopups}
       name = 'edit-avatar'
       title = 'Обновить аватар'
       children = {
@@ -67,6 +76,7 @@ function App() {
 
     <PopupWithForm 
       isOpen = {isAddPlacePopupOpen}
+      onClose = {closeAllPopups}
       name = 'add-card'
       title = 'Новое место'
       children = {
