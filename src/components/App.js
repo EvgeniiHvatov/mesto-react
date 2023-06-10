@@ -1,4 +1,3 @@
-//import '../index.css';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
@@ -53,10 +52,10 @@ function App() {
       title = 'Редактировать профиль'
       children = {
         <>
-          <input class="popup__input popup__input_text_name" id="firstname" name="firstname" placeholder="Имя" type="text" required minlength="2" maxlength="40"/>
-          <span class="popup__error" id="firstname-error"></span>
-          <input class="popup__input popup__input_text_about" id="about" name="about" placeholder="О себе" type="text" required minlength="2" maxlength="200"/>
-          <span class="popup__error" id="about-error"></span>
+          <input className="popup__input popup__input_text_name" id="firstname" name="firstname" placeholder="Имя" type="text" required minLength="2" maxLength="40"/>
+          <span className="popup__error" id="firstname-error"></span>
+          <input className="popup__input popup__input_text_about" id="about" name="about" placeholder="О себе" type="text" required minLength="2" maxLength="200"/>
+          <span className="popup__error" id="about-error"></span>
         </>
       }
     />
@@ -68,8 +67,8 @@ function App() {
       title = 'Обновить аватар'
       children = {
         <>
-          <input class="popup__input" id="avatarlink" name="url" type="url" placeholder="Ссылка на аватар" required />
-          <span class="popup__error" id="avatarlink-error"></span>
+          <input className="popup__input" id="avatarlink" name="url" type="url" placeholder="Ссылка на аватар" required />
+          <span className="popup__error" id="avatarlink-error"></span>
         </>
       }
     />
@@ -81,10 +80,10 @@ function App() {
       title = 'Новое место'
       children = {
         <>
-          <input class="popup__input popup__input_text_name-place" id="nameplace" name="name" placeholder="Название" type="text" required minlength="2" maxlength="30"/>
-          <span class="popup__error" id="nameplace-error"></span>
-          <input class="popup__input popup__input_text_image-link" id="imagelink" name="link" placeholder="Ссылка на картинку" required type="url"/>
-          <span class="popup__error" id="imagelink-error"></span>
+          <input className="popup__input popup__input_text_name-place" id="nameplace" name="name" placeholder="Название" type="text" required minLength="2" maxLength="30"/>
+          <span className="popup__error" id="nameplace-error"></span>
+          <input className="popup__input popup__input_text_image-link" id="imagelink" name="link" placeholder="Ссылка на картинку" required type="url"/>
+          <span className="popup__error" id="imagelink-error"></span>
         </>
       }
     />
