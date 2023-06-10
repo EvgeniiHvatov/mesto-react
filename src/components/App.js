@@ -50,7 +50,8 @@ function App() {
           isOpen = {isEditProfilePopupOpen}
           onClose = {closeAllPopups}
           name = 'edit-profile'
-          title = 'Редактировать профиль'>
+          title = 'Редактировать профиль'
+          textButton = 'Сохранить'>
             <>
               <input className="popup__input popup__input_text_name" id="firstname" name="firstname" placeholder="Имя" type="text" required minLength="2" maxLength="40"/>
               <span className="popup__error" id="firstname-error"></span>
@@ -63,7 +64,8 @@ function App() {
           isOpen = {isEditAvatarPopupOpen}
           onClose = {closeAllPopups}
           name = 'edit-avatar'
-          title = 'Обновить аватар'>
+          title = 'Обновить аватар'
+          textButton = 'Сохранить'>
             <>
               <input className="popup__input" id="avatarlink" name="url" type="url" placeholder="Ссылка на аватар" required />
               <span className="popup__error" id="avatarlink-error"></span>
@@ -74,7 +76,8 @@ function App() {
           isOpen = {isAddPlacePopupOpen}
           onClose = {closeAllPopups}
           name = 'add-card'
-          title = 'Новое место'>
+          title = 'Новое место'
+          textButton = 'Создать'>
             <>
               <input className="popup__input popup__input_text_name-place" id="nameplace" name="name" placeholder="Название" type="text" required minLength="2" maxLength="30"/>
               <span className="popup__error" id="nameplace-error"></span>
