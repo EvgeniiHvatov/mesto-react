@@ -1,4 +1,4 @@
-function Card({card, name, link, likes, onCardClick}) {
+function Card({card, onCardClick}) {
   function handleClick() {
     onCardClick(card);
   }
