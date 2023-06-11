@@ -1,3 +1,35 @@
+# Проект: Место Россия
+
+## Обзор
+
+* Функциональность и технологии проетка
+* Ссылка на проект в GitHub Pages
+
+
+## Функциональность проекта
+
+* В этом проекте применены, следущие техгологии:
++ Адаптивный интерфейс;
++ Открытие и закрытие модальных окон;
++ Модальное окно с увеличенной фотографией карточки;
++ Реализована структура сайта по методологии БЭМ;
++ Webpack;
+* Обмен данными через API
+
+## Стек технологий
+* В проекте использпользовались:
++ React hoocks;
++ Javascript и расширение jsx;
++ Webpack;
++ Babel;
++ NPM
+
+
+## Проект на GitHub Pages
+
+* [Место: Россия](evgeniihvatov.github.io/mesto-react/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
