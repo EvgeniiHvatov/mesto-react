@@ -1,24 +1,16 @@
-import React, { useEffect } from 'react';
-import api from '../utils/api';
-import initialAvatar from '../images/avatar.jpg';
+import React from 'react';
+//import api from '../utils/api';
+//import initialAvatar from '../images/avatar.jpg';
 import Card from './Card';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
-function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
-  const [userName, setUserName] = React.useState('Жак-Ив Кусто')
-  const [userDescription, setUserDescription] = React.useState('Исследователь океана')
-  const [userAvatar, setUserAvatar] = React.useState(initialAvatar)
-  const [cards, setCards] = React.useState([])
+function Main({onEditProfile, onAddPlace, onEditAvatar, cards, onCardClick}) {
+  // const [userName, setUserName] = React.useState('Жак-Ив Кусто')
+  // const [userDescription, setUserDescription] = React.useState('Исследователь океана')
+  // const [userAvatar, setUserAvatar] = React.useState(initialAvatar)
+  // const [cards, setCards] = React.useState([])
+  const currentUser = React.useContext(CurrentUserContext);
 
-  useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getInitialCards()]).then(([profileInfo, card]) => {
-      setUserName(profileInfo.name)
-      setUserDescription(profileInfo.about)
-      setUserAvatar(profileInfo.avatar)
-      setCards(card)
-    }).catch((err) => {
-      console.error(err);
-    })
-  }, [])
 
   return (
     <main className="content">
