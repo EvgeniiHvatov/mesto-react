@@ -19,6 +19,7 @@
 @import url(./blocks/places/__item/places__item.css);
 @import url(./blocks/places/__image-container/places__image-container.css);
 @import url(./blocks/places/__image/places__image.css);
+@import url(./blocks/places/__delete-card/_hidden/places__delete-card_hidden.css);
 @import url(./blocks/places/__delete-card/places__delete-card.css);
 @import url(./blocks/places/__heading/places__heading.css);
 @import url(./blocks/places/__text/places__text.css);
