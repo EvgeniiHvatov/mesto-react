@@ -15,6 +15,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null)
 
   const [currentUser, setCurrentUser] = React.useState({})
+  const [cards, setCards] = React.useState([]);
 
   useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()]).then(([profileInfo, card]) => {
@@ -41,6 +42,33 @@ function App() {
     setSelectedCard(card);
   }
 
+  function handleCardLike(card) {
+    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+
+    if (!isLiked) {
+      api.addCardLike(card._id).then((newCard) => {
+        setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
+      }).catch((err) => {
+        console.error(err);
+      });
+    } else {
+      api.deleteCardLike(card._id).then((newCard) => {
+        setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
+      }).catch((err) => {
+        console.error(err);
+      });
+    }
+  }
+
+  function handleCardDelete(card) {
+    api.removeCard(card._id).then(() => {
+      setCards((items) => items.filter((c) => c._id !== card._id && c));
+    }).catch((err) => {
+      console.error(err);
+    });
+  }
+ 
+
   function closeAllPopups() {
     setEditProfilePopupOpen(false);
     setAddPlacePopupOpen(false);
@@ -58,6 +86,8 @@ function App() {
             onAddPlace = {handleAddPlaceClick}
             onEditAvatar = {handleEditAvatarClick}
             onCardClick = {handleCardClick}
+            onCardLike = {handleCardLike}
+            cards = {cards}
           />
           <Footer/>
 
@@ -104,6 +134,7 @@ function App() {
           <PopupWithForm 
             name = 'confirmation'
             title = 'Вы уверены?'
+            onCardDelete = {handleCardDelete}
           />
 
           <ImagePopup
